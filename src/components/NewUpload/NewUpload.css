@@ -1,0 +1,29 @@
+#NewUpload {
+    height: 25vh;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 8px solid white;
+    color: black;
+}
+
+button {
+    flex-basis: 18vh;
+    height: 18vh;
+    background-color: white;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#camera {
+    width: 9vh;
+}
+
+#gallery {
+    width: 10vh;
+}

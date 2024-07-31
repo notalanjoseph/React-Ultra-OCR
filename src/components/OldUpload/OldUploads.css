@@ -1,0 +1,21 @@
+#OldUploads {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.OldUpload {
+    flex-basis: 80vh;
+    min-height: 20vw; /* for pc */
+    width: 80vw;
+    max-width: 800px;
+    margin-top: 40px;
+
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Playwrite+HR+Lijeva&display=swap');
+
+#Sidebar {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+h1 {
+    color: black;
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+}
