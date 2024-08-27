@@ -7,7 +7,7 @@ import OpenAI from "openai";
 const getResponse = async (image) => {
 
   const openai = new OpenAI({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY_1+import.meta.env.VITE_OPENAI_API_KEY_2,
     dangerouslyAllowBrowser: true
   });
 
@@ -63,19 +63,16 @@ const getResponse = async (image) => {
 
 const OldUploads = ({ image }) => {
   const [response, setResponse] = useState('loading🐌');
-  //const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (image) {
-      //setLoading(true);
       getResponse(image) // might take a while, during which loading! is displayed
         .then((res) => {
           setResponse(res); // re-renders component with the output
-          //setLoading(false);
         })
         .catch((error) => {
+          setResponse("ERROR, api key might be expired");
           console.error("Error getting response:", error);
-          //setLoading(false);
         });
     }
   }, [image]); // runs on mount and also when image changes
@@ -93,44 +90,6 @@ const OldUploads = ({ image }) => {
     </div>
   );
 };
-/*
-const OldUploads = ({ image }) => {
 
-/*  
-  const [image, setImage] = useState(assets.user_icon);
-
-  const handleNewImage = () => {
-    setImage(NewUploadImage);
-  };
-
-  return (
-    <div id="OldUploads">
-        { // image is initially null.
-        image ? (
-          <div className="OldUpload">
-            <img 
-              src={URL.createObjectURL(image)} 
-              alt="image"
-              className="image"
-            />
-            {getResponse(image)}
-          </div>
-        )
-        : (
-          <div>
-            click on gallery to upload an image
-          </div>
-          )
-        }
-
-{/*
-      <div className="OldUpload">
-        <img src={image} alt="user icon" />
-      </div>
-}
-    </div>
-  )
-}
-*/
 export default OldUploads
 
