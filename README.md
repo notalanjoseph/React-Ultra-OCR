@@ -1,8 +1,5 @@
-# React + Vite
+# Ultra-OCR app using React.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Upload an image to get text extracted from it.
+State of the art OCR and HCR capabilities to get text from the images of easiest prints to complex handwritten manuscripts.
+Powered by OpenAI chat-gpt 4o mini LLM.

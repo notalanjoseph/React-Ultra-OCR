@@ -10,8 +10,8 @@
 }
 
 button {
-    flex-basis: 18vh;
-    height: 18vh;
+    flex-basis: 38vh;
+    height: 15vh;
     background-color: white;
     border-radius: 50px;
 
@@ -24,6 +24,6 @@ button {
     width: 9vh;
 }
 
-#gallery {
+#upload {
     width: 10vh;
 }

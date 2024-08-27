@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gupter:wght@400;500;700&family=Playwrite+HR+Lijeva&display=swap');
 #OldUploads {
     height: 65vh;
     display: flex;
@@ -6,16 +7,32 @@
 }
 
 .OldUpload {
-    flex-basis: 80vh;
-    min-height: 20vw; /* for pc */
+    /*flex-basis: 20vh;
+    min-height: 20vw;  for pc */
     width: 80vw;
     max-width: 800px;
     margin-top: 40px;
+    border-radius: 30px;
 
     background-color: whitesmoke;
     color: black;
-    border-radius: 30px;
     display: flex;
-    justify-content: center;
-    align-items: top;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.image {
+    width: 70vw;
+    max-width: 700px;
+    border-radius: 30px;
+    margin: 30px 0;
+}
+
+p {
+    margin: 0px 20px 30px 20px;
+    font-family: "Gupter", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
 }

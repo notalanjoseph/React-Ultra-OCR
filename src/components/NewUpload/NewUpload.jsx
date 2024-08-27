@@ -19,15 +19,14 @@ const NewUpload = ({ handleImage }) => {
     fileInputRef.current.click();
   };
 
-  const onCameraClick = () => {
-    window.location.href = "https://www.google.com";
-  };
+  //const onCameraClick = () => {
+  //  window.location.href = "https://www.google.com";
+  //};
 
 
   return (
     <div id="NewUpload">
-      <NewButton name="camera" handleClick={onCameraClick} />
-      <NewButton name="gallery" handleClick={onGalleryClick} />
+      <NewButton name="upload" handleClick={onGalleryClick} />
 
       <input 
         type="file" 
