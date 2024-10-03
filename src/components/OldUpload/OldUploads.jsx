@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import "./OldUploads.css"
 import {assets} from "../../assets/assets"
 
+/*
 import OpenAI from "openai";
 
 const getResponse = async (image) => {
 
   const openai = new OpenAI({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY_1+import.meta.env.VITE_OPENAI_API_KEY_2,
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true
   });
 
@@ -59,6 +60,47 @@ const getResponse = async (image) => {
   });
 
   return response.choices[0].message.content
+};
+*/
+
+const getResponse = async (image) => {
+  // Function to read and encode the image to Base64
+  const encodeImageToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64Image = reader.result.split(',')[1]; // Remove the data URL part
+        resolve(base64Image);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
+  try {
+    const encodedImage = await encodeImageToBase64(image);
+
+    // Send the POST request to azure function
+    const response = await fetch('http://localhost:7071/api/ultra_http_trigger', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ image: encodedImage }), // Send the base64-encoded image in JSON
+    });
+
+    // Handle the response
+    if (!response.ok) {
+      throw new Error('Failed to get response from server');
+    }
+
+    const data = await response.json();
+    console.log("Response from server:", data.message);
+    return data.message;
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
 };
 
 const OldUploads = ({ image }) => {

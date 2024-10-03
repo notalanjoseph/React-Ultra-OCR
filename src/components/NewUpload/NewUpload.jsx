@@ -26,7 +26,7 @@ const NewUpload = ({ handleImage }) => {
 
   return (
     <div id="NewUpload">
-      <NewButton name="upload" handleClick={onGalleryClick} />
+      <NewButton name="upload" handleClick={ () => fileInputRef.current.click() }/>
 
       <input 
         type="file" 
